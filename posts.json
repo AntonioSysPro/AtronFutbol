@@ -1,0 +1,29 @@
+[
+  {
+    "id": "1",
+    "title": "El Clásico: Barcelona vs Real Madrid",
+    "content": "El Clásico es uno de los partidos de fútbol más emocionantes y esperados del mundo. La rivalidad entre el Barcelona y el Real Madrid es legendaria, y cada partido es una batalla por el orgullo y la supremacía.",
+    "author": "ATRONFÚTBOL",
+    "date": "2023-09-07",
+    "image": "assets/images/futbol-blog-1.jpg",
+    "category": "futbol"
+  },
+  {
+    "id": "2",
+    "title": "La Historia de la Champions League",
+    "content": "La Champions League es el torneo de clubes más prestigioso de Europa. Desde su creación en 1955, ha sido testigo de algunos de los momentos más memorables en la historia del fútbol.",
+    "author": "ATRONFÚTBOL",
+    "date": "2023-09-07",
+    "image": "assets/images/futbol-blog-2.jpg",
+    "category": "futbol"
+  },
+  {
+    "id": "3",
+    "title": "Los Mejores Goles de la Historia del Fútbol",
+    "content": "El fútbol ha sido testigo de innumerables goles espectaculares a lo largo de su historia. Desde remates acrobáticos hasta disparos de larga distancia, estos son algunos de los mejores goles de todos los tiempos.",
+    "author": "ATRONFÚTBOL",
+    "date": "2023-09-07",
+    "image": "assets/images/futbol-blog-3.jpg",
+    "category": "futbol"
+  }
+]

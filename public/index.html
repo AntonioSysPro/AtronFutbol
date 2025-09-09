@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AtronFútbol - Pasión por el Fútbol</title>
+  <meta name="description"
+    content="Blog sobre fútbol: noticias, historia, goles y análisis. Posts escritos por aficionados y expertos. Mantente al día con los últimos posts.">
+  <link rel="canonical" href="/">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Atron Fútbol - Pasión por el Fútbol">
+  <meta property="og:description"
+    content="Noticias, historia y análisis del mundo del fútbol. Mantente al día con los últimos posts.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="/">
+  <meta property="og:image" content="assets/images/hero.png">
+
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body class="light-theme">
+
+  <!--
+    - #HEADER
+  -->
+
+  <header style="position:fixed;">
+
+    <div class="container">
+
+      <nav class="navbar">
+
+        <a href="#">
+          <img src="./assets/images/favicon2.ico" alt="SimpleBlog logo" width="150" class="logo-light">
+          <img src="./assets/images/favicon2.ico" alt="SimpleBlog logo" width="150" class="logo-dark">
+        </a>
+
+        <div searchbar>
+          <input type="search" id="search-bar" placeholder="Buscar Posts...🔍" aria-label="Buscar posts">
+
+        </div>
+
+        <div class="btn-group">
+
+          <button class="theme-btn theme-btn-mobile light">
+            <ion-icon name="moon" class="moon"></ion-icon>
+            <ion-icon name="sunny" class="sun"></ion-icon>
+          </button>
+
+          <button class="nav-menu-btn">
+            <ion-icon name="menu-outline"></ion-icon>
+          </button>
+
+        </div>
+
+        <div class="flex-wrapper">
+
+          <ul class="desktop-nav">
+
+            <li>
+              <a href="../" class="nav-link">Inicio</a>
+            </li>
+
+            <li>
+              <a href="#" class="nav-link">Sobre Nosotros</a>
+            </li>
+
+            <li>
+              <a href="#" class="nav-link">Contactanos</a>
+            </li>
+
+          </ul>
+
+          <button class="theme-btn theme-btn-desktop light">
+            <ion-icon name="moon" class="moon"></ion-icon>
+            <ion-icon name="sunny" class="sun"></ion-icon>
+          </button>
+
+        </div>
+
+        <div class="mobile-nav">
+
+          <button class="nav-close-btn">
+            <ion-icon name="close-outline"></ion-icon>
+          </button>
+
+          <div class="wrapper">
+
+            <p class="h3 nav-title">Principal Menú</p>
+
+            <ul>
+              <li class="nav-item">
+                <a href="../" class="nav-link">Inicio</a>
+              </li>
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">Sobre Nosotros</a>
+              </li>
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">Contactanos</a>
+              </li>
+            </ul>
+
+          </div>
+
+          <div>
+
+            <p class="h3 nav-title">Tópicos</p>
+
+            <ul>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Base de datos</a>
+              </li>
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">Accesibilidad</a>
+              </li>
+
+              <li class="nav-item">
+                <a href="#" class="nav-link">Rendimiento web</a>
+              </li>
+            </ul>
+
+          </div>
+
+        </div>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+  <main>
+
+    <!--
+      - #HERO SECTION
+    -->
+
+    <div class="hero">
+
+      <div class="container">
+
+        <div class="left">
+
+          <h1 class="h1">
+            <b>----------------------------</b>
+            Hola, somos <b>Antonio y Ronal</b>.
+            <br>Apasionados por el Fútbol.
+          </h1>
+
+          <p class="h3">
+            Amantes del fútbol y todo lo relacionado con este deporte.
+          </p>
+
+          <div class="btn-group">
+            <a href="#" class="btn btn-primary">Contactanos</a>
+            <a href="#" class="btn btn-secondary">Sobre Nosotros</a>
+          </div>
+
+        </div>
+
+        <div class="right">
+
+          <div class="pattern-bg"></div>
+          <div class="img-box">
+            <img src="./assets/images/favicon.ico" alt="Imagen de Fútbol" class="hero-img">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+
+
+    <div class="main">
+
+      <div class="container">
+
+        <!--
+          - BLOG SECTION
+        -->
+
+        <div class="blog">
+
+          <h2 class="h2">Posts recientes</h2>
+
+          <div class="blog-card-group" id="blog-card-group">
+
+          </div>
+
+          <button class="btn load-more">Mostar Más</button>
+
+        </div>
+
+
+
+
+
+        <!--
+          - ASIDE
+        -->
+
+        <div class="aside">
+
+          <div class="topics">
+
+            <h2 class="h2">Tópicos</h2>
+
+            <a href="#" class="topic-btn">
+              <div class="icon-box">
+                <ion-icon name="football-outline"></ion-icon>
+              </div>
+
+              <p>Fútbol</p>
+            </a>
+
+          </div>
+
+          <div class="tags">
+
+            <h2 class="h2">#Tags</h2>
+
+            <div class="wrapper">
+
+              <button class="hashtag">#futbol</button>
+              <button class="hashtag">#futbolcolombia</button>
+              <button class="hashtag">#deportes</button>
+              <button class="hashtag">#mobility</button>
+              <button class="hashtag">#inclusion</button>
+              <button class="hashtag">#webperf</button>
+              <button class="hashtag">#optimize</button>
+              <button class="hashtag">#performance</button>
+
+            </div>
+
+          </div>
+
+          <div class="contact">
+
+            <h2 class="h2">Hablemos</h2>
+
+            <div class="wrapper">
+
+              <p>
+                ¿Quieres aprender más sobre cómo puedo ayudarte a tu empresa para superar problemas? ¿Podemos tener una
+                conversación?
+              </p>
+
+              <ul class="social-link">
+
+                <li>
+                  <a href="https://discord.com/invite/5gXJaJQ" target="_blank" class="icon-box discord">
+                    <ion-icon name="logo-discord"></ion-icon>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="wa.me/+573147628183" target="_blank" class="icon-box whatsapp">
+                    <ion-icon name="logo-whatsapp"></ion-icon>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="https://www.facebook.com/?ref=Antonio+Castilla" target="_blank" class="icon-box facebook">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                  </a>
+                </li>
+
+              </ul>
+
+            </div>
+
+          </div>
+
+          <div class="newsletter">
+
+            <h2 class="h2">Noticias</h2>
+
+            <div class="wrapper">
+
+              <p>
+                Suscribete a nuestro blog para ser uno de los primeros en mantenerse al día con las últimas
+                actualizaciones.
+              </p>
+
+              <form action="#">
+                <input type="email" name="email" placeholder="@Correo" required>
+
+                <button type="submit" class="btn btn-primary">Suscribirme</button>
+              </form>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+
+
+
+  <!--
+    - #FOOTER
+  -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="wrapper">
+
+        <a href="#" class="footer-logo">
+          <img src="./assets/images/favicon2.ico" alt="SimpleBlog Logo" width="150" class="logo-light">
+          <img src="./assets/images/favicon2.ico" alt="SimpleBlog Logo" width="150" class="logo-dark">
+        </a>
+
+        <p class="footer-text">
+          Comprender sobre accesibilidad web, rendimiento de la web y manejo de bases de datos.
+        </p>
+
+      </div>
+
+      <div class="wrapper">
+
+        <p class="footer-title">Líneas de acceso rápidas</p>
+
+        <ul>
+
+          <li>
+            <a href="#" class="footer-link">Establecer publicidad con nosotros</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Sobre nosotros</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Contactanos</a>
+          </li>
+
+        </ul>
+
+      </div>
+
+      <div class="wrapper">
+
+        <p class="footer-title">Posts legales</p>
+
+        <ul>
+
+          <li>
+            <a href="#" class="footer-link">Notificación de privacidad</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Política de cookies</a>
+          </li>
+
+          <li>
+            <a href="#" class="footer-link">Terminos De Uso</a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+    <p class="copyright">
+      &copy; Copyright 2025 <a href="#">ATRONFÚTBOL</a>
+    </p>
+
+  </footer>
+
+
+
+
+
+  <!--
+    - custom js link
+  -->
+  <script src="./assets/js/theme.js"></script>
+  <script>
+    // Client-side post loader: merge posts.json (server) with localStorage (admin edits)
+    ( function ()
+    {
+      const blogCardGroup = document.getElementById( 'blog-card-group' );
+      const loadMoreBtn = document.querySelector( '.load-more' );
+      const PAGE_SIZE = 10;
+      let allPosts = [];
+      let page = 2;
+
+      function parseDateSafe ( d )
+      {
+        // normalize various date formats; fall back to epoch 0
+        const t = Date.parse( d );
+        return isNaN( t ) ? 0 : t;
+      }
+
+      function sortPosts ( posts )
+      {
+        return posts.sort( ( a, b ) => parseDateSafe( b.date ) - parseDateSafe( a.date ) );
+      }
+
+      function resolveImageUrl ( src )
+      {
+        if ( !src ) return 'assets/images/hero.png';
+        // absolute URL
+        if ( /^(https?:)?\/\//i.test( src ) ) return src;
+        // root-absolute
+        if ( src.startsWith( '/' ) ) return src.slice( 1 );
+        // relative path - normalize
+        return src.replace( /^\.\/+/, '' );
+      }
+
+      function renderPage ()
+      {
+        const start = page * PAGE_SIZE;
+        const slice = allPosts.slice( start, start + PAGE_SIZE );
+        slice.forEach( post =>
+        {
+          const blogCard = document.createElement( 'div' );
+          blogCard.classList.add( 'blog-card' );
+          blogCard.innerHTML = `
+            <div class="blog-card-banner">
+              <img src="${ resolveImageUrl( post.image ) }" alt="${ post.title }" width="250" class="blog-banner-img">
+            </div>
+            <div class="blog-content-wrapper">
+              <button class="blog-topic text-tiny"><div class="icon-box">
+                            <ion-icon name="football-outline"></ion-icon>
+                            </div>Fútbol</button>
+              <h3>
+                <a href="posts.html?id=${ post.id }" class="h3" data-id="${ post.id }">${ post.title }</a>
+              </h3>
+              <p class="blog-text">${ post.content }</p>
+              <div class="wrapper-flex">
+                <div class="profile-wrapper">
+                  <img src="./assets/images/author.png" alt="${ post.author || 'ATRONFÚTBOL' }" width="50">
+                </div>
+                <div class="wrapper">
+                  <a href="/author.html" class="h4">${ post.author || 'ATRONFÚTBOL' }</a>
+                  <p class="text-sm">
+                    <time datetime="${ post.date }">${ post.date }</time>
+                    <ion-icon name="time-outline"></ion-icon>
+                  </p>
+                </div>
+              </div>
+            </div>
+          `;
+          blogCardGroup.appendChild( blogCard );
+        } );
+
+        // hide button when no more pages
+        if ( ( page + 1 ) * PAGE_SIZE >= allPosts.length ) loadMoreBtn.style.display = 'none';
+        else loadMoreBtn.style.display = 'inline-block';
+      }
+
+      loadMoreBtn.addEventListener( 'click', () =>
+      {
+        page++;
+        renderPage();
+      } );
+
+      async function loadAll ()
+      {
+        try
+        {
+          // fetch server posts.json first
+          const res = await fetch( 'posts.json', { cache: 'no-cache' } );
+          const serverPosts = Array.isArray( await res.json() ) ? await res.json() : [];
+
+          // load admin posts from localStorage
+          const adminPosts = JSON.parse( localStorage.getItem( 'posts' ) || '[]' );
+
+          // merge by id: admin posts override server posts
+          const map = new Map();
+          ( serverPosts || [] ).forEach( p => map.set( p.id, p ) );
+          ( adminPosts || [] ).forEach( p => map.set( p.id, p ) );
+
+          allPosts = sortPosts( Array.from( map.values() ) );
+
+          // initial render
+          blogCardGroup.innerHTML = '';
+          page = 0;
+          renderPage();
+
+          // Inject JSON-LD structured data for SEO (first 5 posts)
+          const ld = {
+            "@context": "https://schema.org",
+            "@type": "Blog",
+            "name": document.title,
+            "url": location.href,
+            "blogPost": allPosts.slice( 0, 5 ).map( p => ( {
+              "@type": "BlogPosting",
+              "headline": p.title,
+              "datePublished": p.date,
+              "author": { "@type": "Person", "name": p.author || 'ATRONFÚTBOL' },
+              "image": p.image || 'assets/images/descarga(10).jpeg',
+              "description": ( p.content || '' ).slice( 0, 150 )
+            } ) )
+          };
+          const s = document.createElement( 'script' );
+          s.type = 'application/ld+json';
+          s.text = JSON.stringify( ld );
+          document.head.appendChild( s );
+
+        } catch ( err )
+        {
+          console.error( 'Error loading posts:', err );
+          // fallback: try localStorage only
+          const adminPosts = JSON.parse( localStorage.getItem( 'posts' ) || '[]' );
+          allPosts = sortPosts( adminPosts );
+          blogCardGroup.innerHTML = '';
+          page = 0;
+          renderPage();
+        }
+      }
+
+      loadAll();
+    } )();
+  </script>
+  <!--
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

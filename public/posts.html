@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
+
+</head>
+
+<header style="position:fixed;">
+    <div class="container">
+
+        <nav class="navbar">
+
+            <a href="#">
+                <img src="./assets/images/favicon2.ico" alt="SimpleBlog logo" width="150" class="logo-light">
+                <img src="./assets/images/favicon2.ico" alt="SimpleBlog logo" width="150" class="logo-dark">
+            </a>
+
+            <div class="btn-group">
+
+                <button class="theme-btn theme-btn-mobile light">
+                    <ion-icon name="moon" class="moon"></ion-icon>
+                    <ion-icon name="sunny" class="sun"></ion-icon>
+                </button>
+
+                <button class="nav-menu-btn">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </button>
+
+            </div>
+
+            <div class="flex-wrapper">
+
+                <ul class="desktop-nav">
+
+                    <li>
+                        <a href="../" class="nav-link">Inicio</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="nav-link">Sobre Nosotros</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="nav-link">Contactanos</a>
+                    </li>
+
+                </ul>
+
+                <button class="theme-btn theme-btn-desktop light">
+                    <ion-icon name="moon" class="moon"></ion-icon>
+                    <ion-icon name="sunny" class="sun"></ion-icon>
+                </button>
+
+            </div>
+
+            <div class="mobile-nav">
+                <button class="nav-close-btn">
+                    <ion-icon name="close-outline"></ion-icon>
+                </button>
+
+                <div class="wrapper">
+
+                    <p class="h3 nav-title">Principal Menú</p>
+
+                    <ul>
+                        <li class="nav-item">
+                            <a href="../" class="nav-link">Inicio</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Sobre Nosotros</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Contactanos</a>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div>
+
+                    <p class="h3 nav-title">Tópicos</p>
+
+                    <ul>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Base de datos</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Accesibilidad</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">Rendimiento web</a>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </nav>
+</header>
+
+<body class="light-theme">
+    <div id="pepe">
+        <main class="container">
+            <a href="/" class="btn" id="back-text">← Volver</a>
+            <div id="post-root"></div>
+        </main>
+        <script src="./assets/js/theme.js"></script>
+        <script>
+            ( async function ()
+            {
+                function q ( name )
+                {
+                    const params = new URLSearchParams( window.location.search );
+                    return params.get( name );
+                }
+                function resolveLocalImage ( src )
+                {
+                    if ( !src ) return 'assets/images/hero.png';
+                    if ( /^(https?:)?\/\//i.test( src ) ) return src;
+                    if ( src.startsWith( '/' ) ) return src.slice( 1 );
+                    return src.replace( /^\.\/+/, '' );
+                }
+                const id = q( 'id' );
+                const root = document.getElementById( 'post-root' );
+
+                try
+                {
+                    const res = await fetch( 'posts.json', { cache: 'no-cache' } );
+                    const server = await res.json();
+                    const local = JSON.parse( localStorage.getItem( 'posts' ) || '[]' );
+                    const map = new Map();
+                    ( server || [] ).forEach( p => map.set( p.id, p ) );
+                    ( local || [] ).forEach( p => map.set( p.id, p ) );
+                    const posts = Array.from( map.values() );
+                    if ( !id )
+                    {
+                        root.innerHTML = '<p>Identificador de post no especificado.</p>';
+                        return;
+                    }
+                    const post = posts.find( p => p.id === id );
+                    if ( !post )
+                    {
+                        root.innerHTML = '<p>No se encontró el post.</p>';
+                        return;
+                    }
+                    document.title = escapeHtml( post.title );
+                    root.innerHTML = `
+          <article class="post-detail">
+            <h1>------------------------------------------------------------------------------------------------------------------------</h1>
+            <h1 class="tol">${ escapeHtml( post.title ) }</h1>
+            <p class="meta">Por <strong>${ escapeHtml( post.author || '' ) }</strong> — <time datetime="${ escapeHtml( post.date || '' ) }">${ escapeHtml( post.date || '' ) }</time>
+                    <ion-icon name="time-outline"></ion-icon></p>
+            ${ post.image ? `<img src="${ resolveLocalImage( post.image ) }" alt="${ escapeHtml( post.title ) }" style="max-width:100%;height:auto;margin:12px 0">` : '' }
+            <div class="content" id="contenid">${ escapeHtml( post.content ).replace( /\n/g, '<br>' ) }</div>
+          </article>
+        `;
+                } catch ( e )
+                {
+                    root.innerHTML = '<p>Error cargando el post.</p>';
+                    console.error( e );
+                }
+
+                function escapeHtml ( str ) { if ( !str ) return ''; return String( str ).replace( /[&<>"']/g, function ( m ) { return ( { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": "&#39;" } )[ m ]; } ); }
+            } )();
+        </script>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
