@@ -1410,3 +1410,83 @@ header {
   background-color: #d35400;
   /* Un naranja más oscuro */
 }
+
+/* Profile dropdown styles */
+#user-profile, #user-profile-mobile {
+  position: relative;
+  display: inline-block;
+}
+
+#user-profile-img, #user-profile-img-mobile {
+  cursor: pointer;
+  border: 2px solid var(--accent);
+  transition: transform 0.3s ease;
+}
+
+#user-profile-img:hover, #user-profile-img-mobile:hover {
+  transform: scale(1.1);
+}
+
+.profile-dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: var(--background-primary);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1000;
+  border-radius: 5px;
+  padding: 10px 0;
+}
+
+.profile-dropdown a {
+  color: var(--foreground-primary);
+  padding: 8px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.profile-dropdown a {
+  transition: all 0.3s ease;
+  color: var(--foreground-primary);
+}
+
+.profile-dropdown a:hover {
+  background-color: var(--action-primary);
+  color: var(--background-primary);
+}
+
+.show {
+  display: block;
+  animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile profile styles */
+#user-profile-mobile .profile-dropdown {
+  position: fixed;
+  top: 70px;
+  right: 15px;
+}
+.auth-prompt {
+  background: var(--background-primary);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 5px 5px hsla(0, 0%, 0%, 0.05);
+  border: 2px solid;
+  color: blue;
+  text-align: center;
+}
+
+.auth-prompt h2 {
+  margin-bottom: 15px;
+}
+
+.auth-prompt p {
+  margin-bottom: 25px;
+  color: var(--text-secondary);
+}

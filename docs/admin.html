@@ -10,75 +10,17 @@
 </head>
 
 <body>
-    <h1>Admin Panel</h1>
-    <div id="post-list"></div>
-    <script>
-        const postList = document.getElementById( 'post-list' );
+    <header class="admin-header">
+        <h1>Admin Panel</h1>
+        <button id="logout-button" class="btn btn-danger">Cerrar Sesión</button>
+    </header>
+    
+    <main>
+        <div id="post-list"></div>
+    </main>
 
-        async function loadPosts ()
-        {
-            try
-            {
-                const response = await fetch( '/api/posts?all=true' );
-                const posts = await response.json();
-
-                posts.sort( ( a, b ) => new Date( b.date ) - new Date( a.date ) );
-
-                let html = '';
-                posts.forEach( post =>
-                {
-                    html += `
-                        <div class="post">
-                            <h2>${ post.title }</h2>
-                            <p>Author: ${ post.author }</p>
-                            <p>Content: ${ post.content }</p>
-                            <img src="${ post.image }" alt="${ post.title }" width="200">
-                            <p>Status: ${ post.status }</p>
-                            <p>Views: ${ post.views }</p>
-                            <button>Edit</button>
-                            <button>Delete</button>
-                            <button onclick="approvePost('${ post.id }')">Approve</button>
-                        </div>
-                    `;
-                } );
-
-                postList.innerHTML = html;
-            } catch ( error )
-            {
-                console.error( 'Error:', error );
-                postList.innerHTML = '<p>Failed to load posts.</p>';
-            }
-        }
-
-        loadPosts();
-
-        async function approvePost ( postId )
-        {
-            try
-            {
-                const response = await fetch( `/api/posts/${ postId }`, {
-                    method: 'PUT',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify( { status: 'published' } )
-                } );
-
-                if ( response.ok )
-                {
-                    alert( 'Post approved successfully!' );
-                    loadPosts(); // Reload posts after approval
-                } else
-                {
-                    alert( 'Failed to approve post.' );
-                }
-            } catch ( error )
-            {
-                console.error( 'Error:', error );
-                alert( 'An error occurred while approving the post.' );
-            }
-        }
-    </script>
+    <script src="./assets/js/auth.js"></script>
+    <script src="./assets/js/admin.js"></script>
 </body>
 
 </html>

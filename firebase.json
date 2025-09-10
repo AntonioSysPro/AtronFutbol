@@ -1,0 +1,14 @@
+{
+  "hosting": {
+    "public": "docs/",
+    "site": "atronsport",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  },
+  "database": {
+    "rules": "database.rules.json"
+  }
+}

@@ -1,4 +1,5 @@
 'use strict';
+
 // theme toggle variables
 const themeBtn = document.querySelectorAll( '.theme-btn' );
 // navbar variables

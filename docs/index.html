@@ -89,6 +89,22 @@
               <a href="post.html?id=${post.id}" class="nav-link">Contactanos</a>
             </li>
 
+            <li id="login-link">
+              <a href="./login.html" class="nav-link">Iniciar Sesión</a>
+            </li>
+            <li id="user-profile" style="display:none;">
+              <div class="profile-container">
+                <a href="#" class="nav-link" id="profile-toggle">
+                  <img id="user-profile-img" src="" alt="Perfil" style="border-radius: 50%; width: 30px; height: 30px;">
+                </a>
+                <div class="profile-dropdown">
+                  <a href="./profile.html">Mi Perfil</a>
+                  <a href="./admin.html">Panel Admin</a>
+                  <a href="#" id="logout-link">Cerrar Sesión</a>
+                </div>
+              </div>
+            </li>
+
           </ul>
 
           <button class="theme-btn theme-btn-desktop light">
@@ -121,6 +137,18 @@
                 <a href="post.html?id=${post.id}" class="nav-link">Contactanos</a>
               </li>
             </ul>
+
+            <div id="login-button">
+              <a href="./login.html" class="btn btn-primary">Iniciar Sesión</a>
+            </div>
+            <div id="user-profile-mobile" style="display:none;">
+              <div class="profile-container">
+                <a href="#" class="nav-link" id="profile-toggle-mobile">
+                  <img id="user-profile-img-mobile" src="" alt="Perfil"
+                    style="border-radius: 50%; width: 30px; height: 30px;">
+                </a>
+              </div>
+            </div>
 
           </div>
 
@@ -308,25 +336,10 @@
 
           </div>
 
-          <div class="newsletter">
-
-            <h2 class="h2">Noticias</h2>
-
-            <div class="wrapper">
-
-              <p>
-                Suscribete a nuestro blog para ser uno de los primeros en mantenerse al día con las últimas
-                actualizaciones.
-              </p>
-
-              <form action="#">
-                <input type="email" name="email" placeholder="@Correo" required>
-
-                <button type="submit" class="btn btn-primary">Suscribirme</button>
-              </form>
-
-            </div>
-
+          <div class="auth-prompt">
+            <h2>Únete a la conversación</h2>
+            <p>Inicia sesión para crear tus propios posts y dejar comentarios.</p>
+            <a href="./login.html" class="btn btn-primary">Iniciar Sesión / Registrarse</a>
           </div>
         </div>
 
@@ -413,6 +426,7 @@
     - custom js link
   -->
   <script src="./assets/js/theme.js"></script>
+  <script type="module" src="./assets/js/auth.js"></script>
   <script>
     const blogCardGroup = document.getElementById( 'blog-card-group' );
 
@@ -469,7 +483,7 @@
                 </div>
 
                 <div class="wrapper-flex">
-                  <a href="author.html?authorId=${post.authorId}">
+                  <a href="author.html?authorId=${ post.authorId }">
                     <p class="text-sm">${ post.author }</p>
                   </a>
 
