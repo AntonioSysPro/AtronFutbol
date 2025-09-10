@@ -5,16 +5,16 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AtronFútbol - Pasión por el Fútbol</title>
+  <title>ATRON SPORT - Pasión Por El Deporte</title>
   <meta name="description"
-    content="Blog sobre fútbol: noticias, historia, goles y análisis. Posts escritos por aficionados y expertos. Mantente al día con los últimos posts.">
+    content="Blog sobre deportes: noticias, historias y análisis. Posts escritos por aficionados y expertos. Mantente al día con los últimos posts.">
   <link rel="canonical" href="/">
   <meta name="robots" content="index, follow">
 
   <!-- Open Graph / Social -->
-  <meta property="og:title" content="Atron Fútbol - Pasión por el Fútbol">
+  <meta property="og:title" content="ATRON SPORT - Pasión Por El Deporte">
   <meta property="og:description"
-    content="Noticias, historia y análisis del mundo del fútbol. Mantente al día con los últimos posts.">
+    content="Noticias, historia y análisis del mundo del deporte. Mantente al día con los últimos posts.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="/">
   <meta property="og:image" content="assets/images/hero.png">
@@ -28,6 +28,7 @@
     - custom css link
   -->
   <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/post.css">
 
   <!--
     - google font link
@@ -50,14 +51,13 @@
 
       <nav class="navbar">
 
-        <a href="#">
-          <img src="./assets/images/favicon2.ico" alt="SimpleBlog logo" width="150" class="logo-light">
-          <img src="./assets/images/favicon2.ico" alt="SimpleBlog logo" width="150" class="logo-dark">
+        <a href="post.html?id=${post.id}">
+          <img id="logoj" src="./assets/images/favicon.ico" alt="SimpleBlog logo" class="logo-light">
+          <img id="logoj" src="./assets/images/favicon.ico" alt="SimpleBlog logo" class="logo-dark">
         </a>
 
         <div searchbar>
           <input type="search" id="search-bar" placeholder="Buscar Posts...🔍" aria-label="Buscar posts">
-
         </div>
 
         <div class="btn-group">
@@ -82,11 +82,11 @@
             </li>
 
             <li>
-              <a href="#" class="nav-link">Sobre Nosotros</a>
+              <a href="post.html?id=${post.id}" class="nav-link">Sobre Nosotros</a>
             </li>
 
             <li>
-              <a href="#" class="nav-link">Contactanos</a>
+              <a href="post.html?id=${post.id}" class="nav-link">Contactanos</a>
             </li>
 
           </ul>
@@ -114,11 +114,11 @@
               </li>
 
               <li class="nav-item">
-                <a href="#" class="nav-link">Sobre Nosotros</a>
+                <a href="post.html?id=${post.id}" class="nav-link">Sobre Nosotros</a>
               </li>
 
               <li class="nav-item">
-                <a href="#" class="nav-link">Contactanos</a>
+                <a href="post.html?id=${post.id}" class="nav-link">Contactanos</a>
               </li>
             </ul>
 
@@ -126,19 +126,22 @@
 
           <div>
 
-            <p class="h3 nav-title">Tópicos</p>
+            <p class="h3 nav-title">Categorias</p>
 
             <ul>
               <li class="nav-item">
-                <a href="#" class="nav-link">Base de datos</a>
+                <a href="post.html?id=${post.id}" class="nav-link">Fútbol</a>
               </li>
 
               <li class="nav-item">
-                <a href="#" class="nav-link">Accesibilidad</a>
+                <a href="post.html?id=${post.id}" class="nav-link">Baloncesto</a>
               </li>
 
               <li class="nav-item">
-                <a href="#" class="nav-link">Rendimiento web</a>
+                <a href="post.html?id=${post.id}" class="nav-link">Tenis</a>
+              </li>
+              <li class="nav-item">
+                <a href="post.html?id=${post.id}" class="nav-link">Ciclismo</a>
               </li>
             </ul>
 
@@ -167,16 +170,16 @@
           <h1 class="h1">
             <b>----------------------------</b>
             Hola, somos <b>Antonio y Ronal</b>.
-            <br>Apasionados por el Fútbol.
+            <br>Apasionados por el Deporte.
           </h1>
 
           <p class="h3">
-            Amantes del fútbol y todo lo relacionado con este deporte.
+            Amantes del deporte.
           </p>
 
           <div class="btn-group">
-            <a href="#" class="btn btn-primary">Contactanos</a>
-            <a href="#" class="btn btn-secondary">Sobre Nosotros</a>
+            <a href="post.html?id=${post.id}" class="btn btn-primary">Contactanos</a>
+            <a href="post.html?id=${post.id}" class="btn btn-secondary">Sobre Nosotros</a>
           </div>
 
         </div>
@@ -196,17 +199,9 @@
 
     </div>
 
-
-
-
-
     <div class="main">
 
       <div class="container">
-
-        <!--
-          - BLOG SECTION
-        -->
 
         <div class="blog">
 
@@ -216,32 +211,45 @@
 
           </div>
 
-          <button class="btn load-more">Mostar Más</button>
+          <button class="btn load-more" id="load-more-button">Mostrar Más</button>
 
         </div>
-
-
-
-
-
         <!--
-          - ASIDE
+          - BLOG SECTION
         -->
 
         <div class="aside">
+          <a href="./create-post.html" class="btn btn-primary">Crear Nuevo Post</a>
 
-          <div class="topics">
+          <div class="category">
 
-            <h2 class="h2">Tópicos</h2>
+            <h2 class="h2">Categorias</h2>
 
-            <a href="#" class="topic-btn">
+            <a href="post.html?id=${post.id}" class="category-btn">
               <div class="icon-box">
                 <ion-icon name="football-outline"></ion-icon>
               </div>
 
               <p>Fútbol</p>
             </a>
-
+            <a href="post.html?id=${post.id}" class="category-btn">
+              <div class="icon-box">
+                <ion-icon name="basketball-outline"></ion-icon>
+              </div>
+              <p>Baloncesto</p>
+            </a>
+            <a href="post.html?id=${post.id}" class="category-btn">
+              <div class="icon-box">
+                <ion-icon name="tennisball-outline"></ion-icon>
+              </div>
+              <p>Tenis</p>
+            </a>
+            <a href="post.html?id=${post.id}" class="category-btn">
+              <div class="icon-box">
+                <ion-icon name="bicycle-outline"></ion-icon>
+              </div>
+              <p>Ciclismo</p>
+            </a>
           </div>
 
           <div class="tags">
@@ -320,7 +328,6 @@
             </div>
 
           </div>
-
         </div>
 
       </div>
@@ -328,10 +335,6 @@
     </div>
 
   </main>
-
-
-
-
 
   <!--
     - #FOOTER
@@ -343,9 +346,9 @@
 
       <div class="wrapper">
 
-        <a href="#" class="footer-logo">
-          <img src="./assets/images/favicon2.ico" alt="SimpleBlog Logo" width="150" class="logo-light">
-          <img src="./assets/images/favicon2.ico" alt="SimpleBlog Logo" width="150" class="logo-dark">
+        <a href="post.html?id=${post.id}" class="footer-logo">
+          <img id="logoj" src="./assets/images/favicon.ico" alt="SimpleBlog Logo" class="logo-light">
+          <img id="logoj" src="./assets/images/favicon.ico" alt="SimpleBlog Logo" class="logo-dark">
         </a>
 
         <p class="footer-text">
@@ -361,15 +364,15 @@
         <ul>
 
           <li>
-            <a href="#" class="footer-link">Establecer publicidad con nosotros</a>
+            <a href="post.html?id=${post.id}" class="footer-link">Establecer publicidad con nosotros</a>
           </li>
 
           <li>
-            <a href="#" class="footer-link">Sobre nosotros</a>
+            <a href="post.html?id=${post.id}" class="footer-link">Sobre nosotros</a>
           </li>
 
           <li>
-            <a href="#" class="footer-link">Contactanos</a>
+            <a href="post.html?id=${post.id}" class="footer-link">Contactanos</a>
           </li>
 
         </ul>
@@ -383,15 +386,15 @@
         <ul>
 
           <li>
-            <a href="#" class="footer-link">Notificación de privacidad</a>
+            <a href="post.html?id=${post.id}" class="footer-link">Notificación de privacidad</a>
           </li>
 
           <li>
-            <a href="#" class="footer-link">Política de cookies</a>
+            <a href="post.html?id=${post.id}" class="footer-link">Política de cookies</a>
           </li>
 
           <li>
-            <a href="#" class="footer-link">Terminos De Uso</a>
+            <a href="post.html?id=${post.id}" class="footer-link">Terminos De Uso</a>
           </li>
 
         </ul>
@@ -401,157 +404,124 @@
     </div>
 
     <p class="copyright">
-      &copy; Copyright 2025 <a href="#">ATRONFÚTBOL</a>
+      &copy; Copyright 2025 <a href="post.html?id=${post.id}">ATRON SPORT</a>
     </p>
 
   </footer>
-
-
-
-
 
   <!--
     - custom js link
   -->
   <script src="./assets/js/theme.js"></script>
   <script>
-    // Client-side post loader: merge posts.json (server) with localStorage (admin edits)
-    ( function ()
+    const blogCardGroup = document.getElementById( 'blog-card-group' );
+
+    let allPosts = []; // Store all posts
+    let visiblePosts = 10; // Number of posts to display initially
+
+    async function loadPosts ()
     {
-      const blogCardGroup = document.getElementById( 'blog-card-group' );
-      const loadMoreBtn = document.querySelector( '.load-more' );
-      const PAGE_SIZE = 10;
-      let allPosts = [];
-      let page = 2;
-
-      function parseDateSafe ( d )
+      try
       {
-        // normalize various date formats; fall back to epoch 0
-        const t = Date.parse( d );
-        return isNaN( t ) ? 0 : t;
+        const response = await fetch( '/api/posts' );
+        const posts = await response.json();
+
+        console.log( 'Posts received from server:', posts );
+
+        allPosts = posts.sort( ( a, b ) => new Date( b.date ) - new Date( a.date ) );
+
+        displayPosts( allPosts.slice( 0, visiblePosts ) );
+      } catch ( error )
+      {
+        console.error( 'Error:', error );
+        blogCardGroup.innerHTML = '<p>Failed to load posts.</p>';
       }
+    }
 
-      function sortPosts ( posts )
+    function displayPosts ( posts )
+    {
+      let html = '';
+      posts.forEach( post =>
       {
-        return posts.sort( ( a, b ) => parseDateSafe( b.date ) - parseDateSafe( a.date ) );
-      }
-
-      function resolveImageUrl ( src )
-      {
-        if ( !src ) return 'assets/images/hero.png';
-        // absolute URL
-        if ( /^(https?:)?\/\//i.test( src ) ) return src;
-        // root-absolute
-        if ( src.startsWith( '/' ) ) return src.slice( 1 );
-        // relative path - normalize
-        return src.replace( /^\.\/+/, '' );
-      }
-
-      function renderPage ()
-      {
-        const start = page * PAGE_SIZE;
-        const slice = allPosts.slice( start, start + PAGE_SIZE );
-        slice.forEach( post =>
-        {
-          const blogCard = document.createElement( 'div' );
-          blogCard.classList.add( 'blog-card' );
-          blogCard.innerHTML = `
+        html += `
+          <div class="blog-card">
             <div class="blog-card-banner">
-              <img src="${ resolveImageUrl( post.image ) }" alt="${ post.title }" width="250" class="blog-banner-img">
+              <img src="${ post.image ? post.image + '?cache=' + Date.now() : './assets/images/hero.png' }" alt="${ post.title }"
+                class="blog-banner-img" width="250" onerror="this.src='./assets/images/hero.png'">
             </div>
+
             <div class="blog-content-wrapper">
-              <button class="blog-topic text-tiny"><div class="icon-box">
-                            <ion-icon name="football-outline"></ion-icon>
-                            </div>Fútbol</button>
+              <button class="blog-category text-tiny">${ post.category }</button>
+
               <h3>
-                <a href="posts.html?id=${ post.id }" class="h3" data-id="${ post.id }">${ post.title }</a>
+                <a href="post.html?id=${ post.id }" class="h3">
+                  ${ post.title }
+                </a>
               </h3>
-              <p class="blog-text">${ post.content }</p>
+
+              <p class="blog-text">
+                ${ post.content.substring( 0, 100 ) }...
+              </p>
+
               <div class="wrapper-flex">
                 <div class="profile-wrapper">
-                  <img src="./assets/images/author.png" alt="${ post.author || 'ATRONFÚTBOL' }" width="50">
+                  <img src="./assets/images/author.png" alt="Antonio Castilla" width="50">
                 </div>
-                <div class="wrapper">
-                  <a href="/author.html" class="h4">${ post.author || 'ATRONFÚTBOL' }</a>
-                  <p class="text-sm">
-                    <time datetime="${ post.date }">${ post.date }</time>
-                    <ion-icon name="time-outline"></ion-icon>
-                  </p>
+
+                <div class="wrapper-flex">
+                  <a href="author.html?authorId=${post.authorId}">
+                    <p class="text-sm">${ post.author }</p>
+                  </a>
+
+                  <time class="text-sm" datetime="${ post.date }">${ new Date( post.date ).toLocaleDateString() }</time>
                 </div>
               </div>
             </div>
-          `;
-          blogCardGroup.appendChild( blogCard );
-        } );
-
-        // hide button when no more pages
-        if ( ( page + 1 ) * PAGE_SIZE >= allPosts.length ) loadMoreBtn.style.display = 'none';
-        else loadMoreBtn.style.display = 'inline-block';
-      }
-
-      loadMoreBtn.addEventListener( 'click', () =>
-      {
-        page++;
-        renderPage();
+          </div>
+        `;
       } );
 
-      async function loadAll ()
+      blogCardGroup.innerHTML = html;
+    }
+
+    loadPosts();
+
+    const loadMoreButton = document.getElementById( 'load-more-button' );
+    let currentPage = 1;
+
+    loadMoreButton.addEventListener( 'click', async () =>
+    {
+      const start = currentPage * 10;
+      const end = start + visiblePosts;
+
+      if ( start >= allPosts.length )
       {
-        try
-        {
-          // fetch server posts.json first
-          const res = await fetch( 'posts.json', { cache: 'no-cache' } );
-          const serverPosts = Array.isArray( await res.json() ) ? await res.json() : [];
-
-          // load admin posts from localStorage
-          const adminPosts = JSON.parse( localStorage.getItem( 'posts' ) || '[]' );
-
-          // merge by id: admin posts override server posts
-          const map = new Map();
-          ( serverPosts || [] ).forEach( p => map.set( p.id, p ) );
-          ( adminPosts || [] ).forEach( p => map.set( p.id, p ) );
-
-          allPosts = sortPosts( Array.from( map.values() ) );
-
-          // initial render
-          blogCardGroup.innerHTML = '';
-          page = 0;
-          renderPage();
-
-          // Inject JSON-LD structured data for SEO (first 5 posts)
-          const ld = {
-            "@context": "https://schema.org",
-            "@type": "Blog",
-            "name": document.title,
-            "url": location.href,
-            "blogPost": allPosts.slice( 0, 5 ).map( p => ( {
-              "@type": "BlogPosting",
-              "headline": p.title,
-              "datePublished": p.date,
-              "author": { "@type": "Person", "name": p.author || 'ATRONFÚTBOL' },
-              "image": p.image || 'assets/images/descarga(10).jpeg',
-              "description": ( p.content || '' ).slice( 0, 150 )
-            } ) )
-          };
-          const s = document.createElement( 'script' );
-          s.type = 'application/ld+json';
-          s.text = JSON.stringify( ld );
-          document.head.appendChild( s );
-
-        } catch ( err )
-        {
-          console.error( 'Error loading posts:', err );
-          // fallback: try localStorage only
-          const adminPosts = JSON.parse( localStorage.getItem( 'posts' ) || '[]' );
-          allPosts = sortPosts( adminPosts );
-          blogCardGroup.innerHTML = '';
-          page = 0;
-          renderPage();
-        }
+        alert( 'No hay más posts para mostrar.' );
+        loadMoreButton.disabled = true;
+        return;
       }
 
-      loadAll();
-    } )();
+      displayPosts( allPosts.slice( start, end ) );
+      currentPage++;
+    } );
+
+    function searchPosts ()
+    {
+      const searchInput = document.getElementById( 'search-bar' );
+      const searchTerm = searchInput.value.toLowerCase();
+
+      const filteredPosts = allPosts.filter( post =>
+      {
+        return post.title.toLowerCase().includes( searchTerm ) ||
+          post.content.toLowerCase().includes( searchTerm ) ||
+          post.category.toLowerCase().includes( searchTerm ) ||
+          post.author.toLowerCase().includes( searchTerm );
+      } );
+
+      displayPosts( filteredPosts );
+    }
+
+    document.getElementById( 'search-bar' ).addEventListener( 'input', searchPosts );
   </script>
   <!--
   <!--

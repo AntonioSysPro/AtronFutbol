@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Nuevo Post</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/post.css">
+</head>
+
+<body>
+    <h1 class="create-post-title">Crear Nuevo Post</h1>
+    <div class="create-post-form-container">
+        <h3 class="create-post-form-title">Enviar tu Post</h3>
+        <form id="user-post-form" class="create-post-form">
+            <div class="input-group">
+                <input type="text" name="title" placeholder="Título" required class="create-post-input">
+                <input type="text" name="author" placeholder="Autor" required value="ATRON SPORT"
+                    class="create-post-input">
+                <input type="file" name="image" accept="image/*" placeholder="Selecciona la imagen (opcional)"
+                    class="create-post-input">
+            </div>
+            <select name="category" required class="create-post-input">
+              <option value="Futbol">Fútbol</option>
+              <option value="Baloncesto">Baloncesto</option>
+              <option value="Tenis">Tenis</option>
+              <option value="Ciclismo">Ciclismo</option>
+            </select>
+            <textarea name="content" placeholder="Contenido" required class="create-post-textarea"></textarea>
+            <button type="submit" class="btn btn-primary create-post-button">Enviar Post</button>
+        </form>
+    </div>
+    <script>
+        const postForm = document.getElementById( 'user-post-form' );
+
+        postForm.addEventListener( 'submit', async ( event ) =>
+        {
+            event.preventDefault();
+
+            const title = postForm.title.value;
+            const author = postForm.author.value;
+            const imageFile = postForm.image.files[ 0 ];
+            const content = postForm.content.value;
+
+            let image = '';
+            if ( imageFile )
+            {
+                image = imageFile;
+                console.log( 'Image path:', imageFile.name );
+                await sendPost( title, author, image, content );
+            } else
+            {
+                await sendPost( title, author, image, content );
+            }
+        } );
+
+        async function sendPost ( title, author, image, content )
+        {
+            try
+            {
+                const formData = new FormData();
+                formData.append( 'title', title );
+                formData.append( 'author', author );
+                formData.append( 'content', content );
+                formData.append('category', postForm.category.value);
+                if ( image )
+                {
+                    formData.append( 'image', image, image.name );
+                }
+
+                const response = await fetch( '/api/posts', {
+                    method: 'POST',
+                    body: formData
+                } );
+
+                if ( response.ok )
+                {
+                    alert( 'Post submitted successfully!' );
+                    postForm.reset();
+                } else
+                {
+                    alert( 'Failed to submit post.' );
+                }
+            } catch ( error )
+            {
+                console.error( 'Error:', error );
+                alert( 'An error occurred while submitting the post.' );
+            }
+        }
+    </script>
+</body>
+
+</html>
+]]>

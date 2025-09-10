@@ -1,50 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel de Administración</title>
-    <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./assets/css/post.css">
+    <title>Blog Post</title>
+    <link rel="stylesheet" href="assets/css/post.css">
 </head>
 
 <body>
-    <h1>Panel de Administración</h1>
-
-    <div class="toolbar">
-        <button id="btn-export" type="button">Exportar posts (JSON)</button>
-        <input type="file" id="import-file" accept="application/json" style="display:none">
-        <button id="btn-import" type="button">Importar posts (JSON)</button>
-        <input type="search" id="search" placeholder="Buscar por título..." aria-label="Buscar posts">
+    <div class="container">
+        <header>
+            <button id="back-to-blog">⬅ Volver al blog</button>
+        </header>
+        <main id="post-content">
+            <!-- Post content will be loaded here -->
+        </main>
     </div>
-
-    <form id="post-form" aria-label="Crear o editar post">
-        <input type="hidden" id="post-id" />
-        <label for="title">Título:</label>
-        <input type="text" id="title" name="title" required><br><br>
-
-        <label for="content">Contenido:</label>
-        <textarea id="content" name="content" rows="6" required></textarea><br><br>
-
-        <label for="author">Autor:</label>
-        <input type="text" id="author" name="author" value="ATRONFÚTBOL" required>
-        <input type="file" accept="image/png" id="auimage" style="font-weight: bold;"><br><br>
-
-        <label for="image">URL de la imagen:</label>
-        <input type="text" id="imaget" placeholder="Introduce una url o selecciona un archivo a continuacion">
-        <input type="file" accept="image/*" id="image" name="image" oninput="perpn(); console.log('waea')">
-        <div id="image-preview" aria-hidden="true" style="margin-top:8px"></div>
-        <br><br>
-
-        <button type="submit">Publicar / Guardar</button>
-        <button type="button" id="btn-clear">Limpiar</button>
-    </form>
-
-    <h2>Posts Existentes</h2>
-    <div id="posts-container" aria-live="polite"></div>
-
-    <script src="./assets/js/post.js"></script>
+    <script src="assets/js/post.js"></script>
 </body>
 
 </html>
